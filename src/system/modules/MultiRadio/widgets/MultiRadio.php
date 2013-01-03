@@ -95,7 +95,7 @@ class MultiRadio extends \Checkbox
 			// Single dimension array
 			if (is_numeric($i))
 			{
-				$arrOptions[] = $this->generateradio($arrOption, $i);
+				$arrOptions[] = $this->generateRadio($arrOption, $i);
 				continue;
 			}
 
@@ -120,14 +120,12 @@ class MultiRadio extends \Checkbox
 
 			$arrOptions[] = '</fieldset>';
 			$blnFirst = false;
-			$blnCheckAll = false;
 		}
 
 		// Add a "no entries found" message if there are no options
 		if (empty($arrOptions))
 		{
 			$arrOptions[]= '<p class="tl_noopt">'.$GLOBALS['TL_LANG']['MSC']['noResult'].'</p>';
-			$blnCheckAll = false;
 		}
 
 		if ($this->multiple)
@@ -161,7 +159,7 @@ class MultiRadio extends \Checkbox
 	 * @param integer
 	 * @return string
 	 */
-	protected function generateRadio($arrOption, $i, $k)
+	protected function generateRadio($arrOption, $i, $k='0')
 	{
 		return sprintf('<input type="radio" name="%s" id="opt_%s" class="tl_radio" value="%s"%s%s onfocus="Backend.getScrollOffset()"> <label for="opt_%s">%s</label>',
 						$this->strName . ($this->multiple ? '['.$i.'][]' : ''),

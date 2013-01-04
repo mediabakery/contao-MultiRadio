@@ -18,7 +18,7 @@ namespace Mediabakery\MultiRadio;
  * Class MultiRadio
  *
  */
-class MultiRadio extends \Checkbox
+class MultiRadio extends \CheckBox
 {
 
 
